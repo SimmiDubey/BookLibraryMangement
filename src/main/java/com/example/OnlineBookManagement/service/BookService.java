@@ -5,9 +5,6 @@ import com.example.OnlineBookManagement.repository.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
 import java.util.List;
 
 @Service
@@ -37,7 +34,9 @@ public class BookService {
             existingBook.setQuantity(updateBook.getQuantity());
         }
 
-        return bookRepo.save(existingBook);
+
+        Book save = bookRepo.save(existingBook);
+        return save;
 
     }
 
